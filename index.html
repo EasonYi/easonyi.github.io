@@ -65,6 +65,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Use-hexo-to-build-GitHub-blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/11/Use-hexo-to-build-GitHub-blog/" class="article-date">
+  <time datetime="2015-03-11T12:54:44.000Z" itemprop="datePublished">2015-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/11/Use-hexo-to-build-GitHub-blog/">Use hexo to build GitHub blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Install_Node">Install Node</h1><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew <span class="keyword">install</span> node</span><br></pre></td></tr></table></figure>
+<h1 id="Install_Hexo">Install Hexo</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -g hexo</span><br><span class="line">npm <span class="keyword">install</span> hexo <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-category <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-tag <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-<span class="keyword">server</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-marked@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-stylus@<span class="number">0.2</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-feed@<span class="number">1</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap@<span class="number">1</span> <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="Create_Blog">Create Blog</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog-hexo</span><br><span class="line"><span class="built_in">cd</span> blog-hexo</span><br></pre></td></tr></table></figure>
+<h1 id="Config_Hexo">Config Hexo</h1><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> _config.yml</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: http://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"></span><br><span class="line"># Site</span><br><span class="line">title: Eason's blog</span><br><span class="line">subtitle: Be better and better</span><br><span class="line">description:</span><br><span class="line">author: Eason Yi</span><br><span class="line">language:</span><br><span class="line">timezone:</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, <span class="operator"><span class="keyword">set</span> url <span class="keyword">as</span> <span class="string">'http://yoursite.com/child'</span> <span class="keyword">and</span> root <span class="keyword">as</span> <span class="string">'/child/'</span></span><br><span class="line">url: http://easonyi.github.io</span><br><span class="line">root: /</span><br><span class="line">permalink: :<span class="keyword">year</span>/:<span class="keyword">month</span>/:<span class="keyword">day</span>/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"># Directory</span><br><span class="line">source_dir: source</span><br><span class="line">public_dir: <span class="keyword">public</span></span><br><span class="line">tag_dir: tags</span><br><span class="line">archive_dir: archives</span><br><span class="line">category_dir: categories</span><br><span class="line">code_dir: downloads/code</span><br><span class="line">i18n_dir: :lang</span><br><span class="line">skip_render:</span><br><span class="line"></span><br><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md # File name <span class="keyword">of</span> new posts</span><br><span class="line">default_layout: post</span><br><span class="line">titlecase: <span class="literal">false</span> # Transform title <span class="keyword">into</span> titlecase</span><br><span class="line">external_link: <span class="literal">true</span> # <span class="keyword">Open</span> <span class="keyword">external</span> links <span class="keyword">in</span> new tab</span><br><span class="line">filename_case: <span class="number">0</span></span><br><span class="line">render_drafts: <span class="literal">false</span></span><br><span class="line">post_asset_folder: <span class="literal">false</span></span><br><span class="line">relative_link: <span class="literal">false</span></span><br><span class="line">future: <span class="literal">true</span></span><br><span class="line">highlight:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  tab_replace:</span><br><span class="line"></span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized</span><br><span class="line">category_map:</span><br><span class="line">tag_map:</span><br><span class="line"></span><br><span class="line"># <span class="built_in">Date</span> / <span class="keyword">Time</span> <span class="keyword">format</span></span><br><span class="line">## Hexo uses Moment.js <span class="keyword">to</span> <span class="keyword">parse</span> <span class="keyword">and</span> display <span class="built_in">date</span></span><br><span class="line">## You can customize the <span class="built_in">date</span> <span class="keyword">format</span> <span class="keyword">as</span> defined <span class="keyword">in</span></span><br><span class="line">## http://momentjs.com/docs/#/displaying/<span class="keyword">format</span>/</span><br><span class="line"><span class="keyword">date_format</span>: YYYY-MM-DD</span><br><span class="line"><span class="keyword">time_format</span>: HH:mm:ss</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line">## <span class="keyword">Set</span> per_page <span class="keyword">to</span> <span class="number">0</span> <span class="keyword">to</span> disable pagination</span><br><span class="line">per_page: <span class="number">10</span></span><br><span class="line">pagination_dir: page</span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">## Themes: http://hexo.io/themes/</span><br><span class="line">theme: landscape</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line">## Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/EasonYi/easonyi.github.io</span><br><span class="line">  branch: <span class="keyword">master</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="Create_article">Create article</h1><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"index"</span></span><br><span class="line"><span class="keyword">vim</span> <span class="keyword">source</span>/_posts/<span class="built_in">index</span>.md</span><br></pre></td></tr></table></figure>
+<h1 id="Generate">Generate</h1><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">ge</span><span class="label">nerate</span></span><br></pre></td></tr></table></figure>
+<h1 id="Test_in_localhost">Test in localhost</h1><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">INFO  Hexo is running <span class="keyword">at</span> <span class="keyword">http</span>://<span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">4000</span>/. Press Ctrl+C <span class="built_in">to</span> stop.</span><br></pre></td></tr></table></figure>
+<h1 id="Generate_and_deploy">Generate and deploy</h1><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br><span class="line"><span class="string">http:</span><span class="comment">//easonyi.github.io/</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://easonyi.github.io/2015/03/11/Use-hexo-to-build-GitHub-blog/" data-id="ci74rf2lm0000psf3e0yy10j5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-git-GitHub-Blog/">hexo,git,GitHub,Blog</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-index" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/11/index/" class="article-date">
@@ -91,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://easonyi.github.io/2015/03/11/index/" data-id="ci74q5zs00001svf3qms0d4qd" class="article-share-link">Share</a>
+      <a data-url="http://easonyi.github.io/2015/03/11/index/" data-id="ci74rf2mp0003psf3mzwj8c22" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://easonyi.github.io/2015/03/11/Welcome-to-my-blog/" data-id="ci74q5zr00000svf34g40j3lk" class="article-share-link">Share</a>
+      <a data-url="http://easonyi.github.io/2015/03/11/Welcome-to-my-blog/" data-id="ci74rf2nf0005psf3bu09m4j1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://easonyi.github.io/2015/03/11/hello-world/" data-id="ci74q5zs40002svf3hnn5c4hu" class="article-share-link">Share</a>
+      <a data-url="http://easonyi.github.io/2015/03/11/hello-world/" data-id="ci74rf2nd0004psf3rt2ioojy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,14 +237,28 @@
     
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-git-GitHub-Blog/">hexo,git,GitHub,Blog</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo-git-GitHub-Blog/" style="font-size: NaNpx;">hexo,git,GitHub,Blog</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -207,6 +268,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/03/11/Use-hexo-to-build-GitHub-blog/">Use hexo to build GitHub blog</a>
+          </li>
         
           <li>
             <a href="/2015/03/11/index/">index</a>

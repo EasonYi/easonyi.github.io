@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://easonyi.github.io/2015/03/11/Use-hexo-to-build-GitHub-blog/</loc>
+    <lastmod>2015-03-11T13:30:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://easonyi.github.io/2015/03/11/index/</loc>
     <lastmod>2015-03-11T12:31:56.000Z</lastmod>
   </url>
